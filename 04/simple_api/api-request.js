@@ -17,6 +17,30 @@ app.get('/api/getstudent',(req,res)=>{
     res.send(itStudents);
 });
 
+app.get('/api/querystu',(req,res)=>{
+    const myQueryString = req.query;
+    if(Object.keys(myQueryString).length!= 0){
+        const stuId = itStudents.find(element => element.id === parseInt(myQueryString.id));
+        if(stuId){
+            res.send(stuId);
+        }else{
+            res.status(404).send('ไม่พบรหัสนักศึกษานี้');
+        }
+        
+    }else{
+        res.status(404).send('ไม่พบหน้า API ที่เรียก');
+    }
+});
+
+app.get('/api/getstuid/:id',(req,res)=>{
+    const stuId = itStudents.find(element => element.id === parseInt(req.params.id));
+    if(stuId){
+        res.send(stuId);
+    }else{
+        res.status(404).send('ไม่พบรหัสนักศึกษานี้');
+    }
+});
+
 app.post('/api/addstu',(req,res)=>{
     const stuId = req.body.id;
     const stuFname = req.body.fname;
