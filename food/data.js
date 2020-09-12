@@ -52,6 +52,6 @@ const data = [
         name:'ร้านครัวแก้ว ประชาชื่น37 - ถ.ประชาชื่น',
         imageURL:'https://d1sag4ddilekf6.cloudfront.net/compressed/merchants/3-CZDDG7KBKFWZVE/hero/64b372e35f914df2add966eb2c584fa2_1586947525331262461.jpeg',
         type:'Coupon, Partner, Cooked to Order'
-    },
+    }
 ];
 module.exports = data;
