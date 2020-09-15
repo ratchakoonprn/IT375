@@ -8,9 +8,9 @@ mongoose.connect(DB,{
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
-useUnifiedTopology: true
+    useUnifiedTopology: true
 }).then(con =>{
-    console.log(con.connections);
+    //console.log(con.connections);
     console.log('DB connection successful');
 }).catch(err =>{
     console.log('Cannot connect to DB', err);
